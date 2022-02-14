@@ -156,7 +156,7 @@ public class CurrLocation extends FragmentActivity implements OnMapReadyCallback
     private void checkLocationPermission() {
         if (ContextCompat.checkSelfPermission(this,
                 Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            //Asking user when explanation is need
+            //Asking user when explanation is needed
 
             if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.ACCESS_FINE_LOCATION)) {
                 //Show an explanation to the user
@@ -286,7 +286,7 @@ public class CurrLocation extends FragmentActivity implements OnMapReadyCallback
                         userList.add(user);
                     }
                     for(User user:userList){
-                        if(userName!=user.getUserName()){
+                        if(!userName.equals(user.getUserName())){
                             LatLng latLng=new LatLng(Double.parseDouble(user.getLatitude()),Double.parseDouble(user.getLongitude()));
                             String title=user.getUserName();
                             MarkerOptions options=new MarkerOptions();
@@ -341,6 +341,7 @@ public class CurrLocation extends FragmentActivity implements OnMapReadyCallback
         if(mGoogleApiClient!=null)
             if(mGoogleApiClient.isConnected())
                 mGoogleApiClient.disconnect();
+        if(mProviderClient!=null)
             mProviderClient.removeLocationUpdates(locationCallBack);
     }
 }
