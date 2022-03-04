@@ -1,5 +1,5 @@
 # Maps-Android
-#Code
+# Code
 * Selecting map types
 * Accessing selected location 
 * Getting location permission
