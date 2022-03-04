@@ -1,7 +1,7 @@
 # Maps-Android
 #Code
-* Selecting maps types
+* Selecting map types
 * Accessing selected location 
 * Getting location permission
-* GPS enable 
+* GPS enable dialog
 * Getting current location
